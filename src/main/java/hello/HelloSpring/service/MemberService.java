@@ -3,13 +3,19 @@ package hello.HelloSpring.service;
 import hello.HelloSpring.domain.Member;
 import hello.HelloSpring.repository.MemberRepository;
 import hello.HelloSpring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@Component
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Autowired //MemberService(MemberRepository memberRepository) 이거 두개를 연결시킴
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
