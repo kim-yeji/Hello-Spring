@@ -12,7 +12,8 @@ import java.util.List;
 
 @Controller
 public class MemberController {
-    private final MemberService memberService;
+    private MemberService memberService;
+
 
     @Autowired //스프링이 스프링 빈에 있는 거랑 연결을 시켜줌. MemberController(MemberService memberService)이거 두개
     public MemberController(MemberService memberService) {
